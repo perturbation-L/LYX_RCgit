@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>简易 OJ 测试平台</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>简易 OJ 测试平台</h1>
+      <p class="sub">可录入题目与测试点，并在线运行 Python 代码进行判题。</p>
+
+      <section class="card">
+        <h2>1) 新建题目</h2>
+        <form id="problem-form">
+          <label>题目标题 <input id="title" required /></label>
+          <label>题目描述 <textarea id="description" rows="3"></textarea></label>
+          <label>时间限制（秒） <input id="time_limit" type="number" step="0.1" value="1.0" /></label>
+          <label>测试点（每行：输入 => 输出）</label>
+          <textarea id="cases" rows="5" placeholder="1 2 => 3\n5 7 => 12"></textarea>
+          <button type="submit">保存题目</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>2) 提交代码</h2>
+        <label>选择题目
+          <select id="problem-select"></select>
+        </label>
+        <label>Python 代码</label>
+        <textarea id="code" rows="10" placeholder="a, b = map(int, input().split())\nprint(a+b)"></textarea>
+        <button id="run-btn">运行判题</button>
+      </section>
+
+      <section class="card">
+        <h2>判题结果</h2>
+        <pre id="result">暂无结果</pre>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
